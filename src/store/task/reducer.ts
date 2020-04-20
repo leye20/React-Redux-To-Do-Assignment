@@ -1,6 +1,6 @@
-import { InventoryState, ADD_ITEM_TO_INVENTORY, REMOVE_ITEM_FROM_INVENTORY, InventoryActionTypes } from './types';
+import { TaskState, ADD_ITEM_TO_TASK, REMOVE_ITEM_FROM_TASK, TaskActionTypes } from './types';
 
-const initialState: InventoryState = {
+const initialState: TaskState = {
     items: [
         {
             id: 1,
@@ -21,19 +21,20 @@ const initialState: InventoryState = {
     ]
 }
 
-export function inventoryReducer ( state = initialState, action: InventoryActionTypes ) {
+export function taskReducer ( state = initialState, action: TaskActionTypes ) {
     switch ( action.type ) {
-        case ADD_ITEM_TO_INVENTORY:
+        case ADD_ITEM_TO_TASK:
             return {
                 ...state,
                 items: [ ...state.items, action.payload ]
             }
-        case REMOVE_ITEM_FROM_INVENTORY:
+        case REMOVE_ITEM_FROM_TASK:
             return {
                 ...state,
                 items: state.items.filter( item => item.id !== action.payload )
             }
         default:
             return state;
+                     
     }
 }

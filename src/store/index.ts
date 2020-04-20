@@ -1,8 +1,8 @@
 import { combineReducers, createStore } from 'redux';
-import { inventoryReducer } from './inventory/reducer';
+import { taskReducer } from './task/reducer';
 
 const rootReducer = combineReducers( {
-    inventory: inventoryReducer
+    task: taskReducer
 } );
 
 export type RootState = ReturnType<typeof rootReducer>;
