@@ -46,18 +46,21 @@ export class Task extends React.Component<ITaskProps>
           </Grid.Row>
           <h3>List of Tasks</h3>
           <Grid.Row>
-            <ul>
-              {this.props.items.map( element => (
+            <ol>
+              {(this.props.items.length > 0)?
+              this.props.items.map( element => (
               <li>
                 {element.name}
                 <Button 
-                    color='blue' // not working at the moment
+                    color='blue'
                     onClick={event => {this.deleteTask(element.id)}}>
                     Exclude
                 </Button>
                 </li>
-                ) )}
-            </ul>
+                ) ):
+                <li>You are out of task! thank you...</li>
+                }
+            </ol>
           </Grid.Row>
         </Grid>
       );

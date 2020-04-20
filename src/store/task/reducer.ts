@@ -35,6 +35,6 @@ export function taskReducer ( state = initialState, action: TaskActionTypes ) {
             }
         default:
             return state;
-                     
+            // throw new Error ( 'you are out of task! thank you...');  | expected error display not working. 
     }
 }
